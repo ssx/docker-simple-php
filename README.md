@@ -51,7 +51,7 @@ You can access the services Nginx, MariaDB, Mailhog and Beanstalkd Console at:
  - MariaDB - tcp://localhost:3306 (Use Sequel Pro on a Mac)
 
 
-#### License
+### License
 
 This project is licensed under an Apache 2.0 license which you can find within
 this repository in the [LICENSE file](https://github.com/ssx/docker-simple-php/blob/master/LICENSE).

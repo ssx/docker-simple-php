@@ -1,0 +1,66 @@
+version: '2'
+
+services:
+    web:
+        image: nginx:latest
+        ports:
+            - "8080:80"
+        volumes:
+            - ".:/www"
+            - .docker/config/nginx.conf:/etc/nginx/conf.d/default.conf
+        networks:
+            - dev-network
+            
+    php:
+        image: hellossx/php-fpm
+        volumes:
+            - ".:/www"
+        networks:
+            - dev-network
+
+    mariadb:
+        image: mariadb
+        environment:
+         - MYSQL_ROOT_PASSWORD=vagrant
+         - MYSQL_DATABASE=vagrant
+        volumes:
+         - .docker/volumes/mysql:/var/lib/mysql
+        networks:
+            - dev-network
+
+    beanstalkd:
+        image: hellossx/beanstalkd
+        expose:
+         - "11300"
+        networks:
+            - dev-network
+
+    beanstalkd_console:
+        image: agaveapi/beanstalkd-console
+        links:
+         - "beanstalkd"
+        environment:
+         - BEANSTALKD_HOST=beanstalkd
+         - BEANSTALKD_PORT=11300
+        expose:
+         - "80"
+        ports:
+         - "80"
+        networks:
+            - dev-network
+
+    mailhog:
+      image: mailhog/mailhog
+      ports:
+        - "8002:8025"
+      networks:
+          - dev-network
+
+    redis:
+        image: tutum/redis
+        environment:
+         - REDIS_PASS=**None**
+
+networks:
+    dev-network:
+        driver: bridge

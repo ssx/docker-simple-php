@@ -42,7 +42,8 @@ You can overwrite the Nginx website config by editing the file that is located a
 The included version of PHP-FPM includes GD, Intl and BZ2 extensions as well as
 Composer being installed as well.
 
-### URLs
+
+### Accessible URLs
 
 You can access the services Nginx, MariaDB, Mailhog and Beanstalkd Console at:
 
@@ -52,10 +53,22 @@ You can access the services Nginx, MariaDB, Mailhog and Beanstalkd Console at:
  - MariaDB - tcp://localhost:3306 (Use Sequel Pro on a Mac)
 
 
+### Hosts
+
+When configuring your environment to connect to each service, you can use the
+following hostnames and ports:
+
+  - `mariadb` - 3306
+  - `beanstalkd` - 11300
+  - `redis` - 6739
+  - `mailhog` - 1025
+
+
 ### License
 
 This project is licensed under an Apache 2.0 license which you can find within
 this repository in the [LICENSE file](https://github.com/ssx/docker-simple-php/blob/master/LICENSE).
+
 
 ### Feedback
 

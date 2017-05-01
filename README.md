@@ -7,7 +7,8 @@ Mailhog for when you're using it in local development.
 
 ### Getting Started in 1 seconds
 
-Clone this repository and run `docker-compose up` then point your browser at `http://localhost:8080` and you should see a beautiful PHP info page.
+Clone this repository and run `docker-compose up` then point your browser at
+`http://localhost:8080` and you should see a beautiful PHP info page.
 
 
 ### Getting Started in 5 seconds

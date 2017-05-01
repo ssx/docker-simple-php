@@ -39,8 +39,6 @@ services:
 
     beanstalkd_console:
         image: agaveapi/beanstalkd-console
-        links:
-         - "beanstalkd"
         environment:
          - BEANSTALKD_HOST=beanstalkd
          - BEANSTALKD_PORT=11300

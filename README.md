@@ -50,4 +50,4 @@ this repository in the [LICENSE file](https://github.com/ssx/docker-simple-php/b
 ## Feedback
 
 If you have any feedback, comments or suggestions, please feel free to open an
-issue within the repository on [Github](https://github.com/ssx/docker-php-fpm).
+issue within the repository on [Github](https://github.com/ssx/docker-simple-php).

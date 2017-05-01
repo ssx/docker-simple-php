@@ -10,7 +10,7 @@ services:
             - .docker/config/nginx.conf:/etc/nginx/conf.d/default.conf
         networks:
             - dev-network
-            
+
     php:
         image: hellossx/php-fpm
         volumes:
@@ -23,6 +23,8 @@ services:
         environment:
          - MYSQL_ROOT_PASSWORD=vagrant
          - MYSQL_DATABASE=vagrant
+        ports:
+          - "3306:3306"
         volumes:
          - .docker/volumes/mysql:/var/lib/mysql
         networks:
@@ -52,14 +54,18 @@ services:
     mailhog:
       image: mailhog/mailhog
       ports:
-        - "8002:8025"
+        - "8081:8025"
       networks:
           - dev-network
 
     redis:
         image: tutum/redis
+        expose:
+         - "6379"
         environment:
          - REDIS_PASS=**None**
+        networks:
+            - dev-network
 
 networks:
     dev-network:

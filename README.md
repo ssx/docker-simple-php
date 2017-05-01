@@ -41,6 +41,15 @@ You can overwrite the Nginx website config by editing the file that is located a
 The included version of PHP-FPM includes GD, Intl and BZ2 extensions as well as
 Composer being installed as well.
 
+### URLs
+
+You can access the services Nginx, MariaDB, Mailhog and Beanstalkd Console at:
+
+ - Nginx - http://localhost:8080
+ - mailhog - http://localhost:8081
+ - Beanstalkd Console - http://localhost:8082
+ - MariaDB - tcp://localhost:3306 (Use Sequel Pro on a Mac)
+
 
 #### License
 

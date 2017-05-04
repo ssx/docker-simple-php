@@ -64,6 +64,16 @@ following hostnames and ports:
   - `mailhog` - 1025
 
 
+### Accessing PHP within the stack
+
+If you're running something like Laravel and need to run `php artisan migrate`, you can 
+do this by running:
+
+   docker-compose exec php bash
+   
+within the project directory, this will give you a bash prompt that you can then `cd /www` 
+and run `php artisan migrate` and it'll run the migrations.
+
 ### License
 
 This project is licensed under an Apache 2.0 license which you can find within

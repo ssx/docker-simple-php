@@ -66,13 +66,23 @@ following hostnames and ports:
 
 ### Accessing PHP within the stack
 
-If you're running something like Laravel and need to run `php artisan migrate`, you can 
+If you're running something like Laravel and need to run `php artisan migrate`, you can
 do this by running:
 
    `docker-compose exec php bash`
-   
-within the project directory, this will give you a bash prompt that you can then `cd /www` 
+
+within the project directory, this will give you a bash prompt that you can then `cd /www`
 and run `php artisan migrate` and it'll run the migrations.
+
+
+### .gitignore
+
+It'll be wise to add the following into your `.gitignore` file to stop the
+MariaDB databases being added to your repo:
+
+    .docker/volumes/mysql/*
+    !.docker/volumes/mysql/.gitkeep
+
 
 ### License
 
